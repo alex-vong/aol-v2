@@ -113,7 +113,7 @@ menu-wrap menu {
 }
 
 menu-wrap menu > div {
-	background: rgba(24, 39, 51, 0.85);
+	background: rgba(24, 39, 51, 0.95);
 	width: 60%;
 	height: 200vh;
 	display: flex;
