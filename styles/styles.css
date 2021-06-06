@@ -10,21 +10,68 @@
 		url('../fab/FabfeltScript-Bold.woff') format('woff');
 }
 
-* {
-	/* outline: 2px solid red; */
+@font-face {
+	font-family: 'Avengeance';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Avengeance Mightiest Avenger Regular'), url('../fonts/AV/AVENGEANCE-MIGHTIEST-AVENGER.woff') format('woff');
 }
+
+@font-face {
+    font-family: 'Ki Comic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Ki Comic'), url('../fonts/ki-comic/KICOMIC_.woff') format('woff');
+}
+    
+
+@font-face {
+    font-family: 'Ki Comic Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Ki Comic Italic'), url('../fonts/ki-comic/KICOI___.woff') format('woff');
+ }
+    
+
+@font-face {
+    font-family: 'Ki Comic Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Ki Comic Bold'), url('../fonts/ki-comic/KICOB___.woff') format('woff');
+ }
+    
+
+@font-face {
+    font-family: 'Ki Comic BoldItalic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Ki Comic BoldItalic'), url('../fonts/ki-comic/KICOBI__.woff') format('woff');
+ }
+
+
 
 :root {
 	--blue: #003554;
 	--green: #25a244;
+	--comicRed: #ed1d24;
+	--comicBlue: #00AEEF;
+	--comicGreen: limegreen;
 }
 
 body {
 	color: #fff;
 }
 
+.header {
+font-family: 'Avengeance';
+}
+
 .big-text {
-	font-size: 50px;
+	font-size: 60px;
+	font-size: clamp(60px, 10vw, 120px);
+	padding: 10px;
+	line-height: 1.2;
+
 }
 
 .medium-text {
@@ -33,13 +80,15 @@ body {
 }
 
 .smaller-text {
-	font-size: 20px;
+	font-size: 22px;
 }
 
 .supporting-text {
-	font-size: 18px;
+	font-size: 20px;
 	padding: 35px 0;
 	line-height: 1.4;
+	font-family: 'Ki Comic Bold';
+
 }
 
 nav-links {
@@ -47,8 +96,31 @@ nav-links {
 	display: none;
 }
 
+/*nav-bar .inner-column {
+	background-color: transparent;
+}*/
+
+picture.alex-man {
+	display: inline-block;
+	/*padding: 10px;*/
+	background: transparent;
+	position: absolute;
+	z-index: 99;
+}
+
+.alex-man img {
+	height: 80px;
+	width: auto;
+	position: absolute;
+	top: 5px;
+	left: 10px;
+	border: none;
+
+}
+/*
 nav {
-	background-color: rgba(0, 0, 0, 0.9);
+
+	background-color: rgb(237,29,36);
 	height: 75px;
 	display: flex;
 	align-items: center;
@@ -57,22 +129,20 @@ nav {
 	left: 0;
 	z-index: 999;
 }
+*/
 
-body {
-	font-family: monaco;
-}
+/*nav-bar {
+	display: none;
 
-nav-bar {
 	padding: 15px;
-}
+}*/
 
-logo {
-	display: inline-block;
-	font-family: 'FabfeltScript', Arial, Helvetica, sans-serif;
-	font-size: 30px;
-	padding: 10px;
+/*logo {
+	font-family: 'Ki Comic Bold';
+	font-size: 35px;
+	padding: 5px;
 	color: #fff;
-}
+}*/
 
 /* Hero section */
 
@@ -84,7 +154,7 @@ main {
 
 main:before {
 	content: '';
-	background: url('../images/keyboard.jpeg') no-repeat center center/cover;
+	background: url('../images/blue-desk.jpeg') no-repeat center center/cover;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -104,11 +174,15 @@ main .hero-inner {
 	margin: auto;
 }
 
-main .btn {
+main .btn, .blog .btn {
 	background: var(--green);
 	padding: 15px;
 	display: inline-block;
 	margin-top: 40px;
+}
+
+.hero p.supporting-text {
+	font-size: 25px;
 }
 
 /* about-me */
@@ -117,11 +191,11 @@ main .btn {
 	background-color: var(--blue);
 	padding: 15px;
 	text-align: center;
-	border: 3px solid purple;
+
 }
 
 .about-me picture {
-	padding: 40px 15px;
+	padding: 20px 5px;
 }
 
 
@@ -131,18 +205,19 @@ main .btn {
 
 
 .projects {
-	padding: 15px 0; 
-	background-color: #577590;
+	padding-top: 15px; 
+	background-color: #f8f9fa;
 	text-align: center;
 }
 
 .projects h2 {
-	padding: 30px 0 0 0;
+	padding: 30px 0 20px 0;
+	color: #333;
 }
 
 
 
-picture	{
+project-card picture	{
 	display: block;
 	padding: 10px 20px;
 
@@ -150,10 +225,15 @@ picture	{
 
 picture img {
 	display: block;
-	height: 300px;
+	height: auto;
 	width: 100%;
 	border: 3px solid black;
 	
+}
+
+project-card picture img {
+	height: 300px;
+
 }
 
 .projects-list li {
@@ -176,10 +256,11 @@ picture img {
 
 .projects-list li:nth-of-type(1) {
 	padding-top: 10px;
+	background-color: var(--comicBlue);
 }
 
 .projects-list li:nth-of-type(2) {
-	background-color: #90be6d;
+	background-color: var(--comicGreen);
 }
 
 .projects-list li:nth-of-type(3) {
@@ -190,13 +271,113 @@ picture img {
 	background-color: #7b2cbf;
 }
 .projects-list li:nth-of-type(5) {
-	background-color: #f94144;
+	/*background-color: #f94144;*/
+		background-color: var(--comicRed);
 }
 
 .projects-list li:nth-of-type(6) {
 	background-color: #184e77;
 }
 
+
+
+/*blog*/
+
+.blog {
+	padding: 30px 20px;
+	background-color: #001d3d;
+	text-align: center;
+
+}
+
+
+.blog .btn {
+	margin-top: 0px;
+}
+
+
+
+
+/*media*/
+
+
+@media (min-width: 700px) {
+
+		.inner-column {
+		width: min(95%, 1000px);
+		margin: auto;
+	
+	}
+
+	about-me-container {
+		display: inline-block;
+		/*border: 2px solid red;*/
+		display: flex;
+	}
+
+	.about-me {
+		padding: 5px;
+	}
+
+	.about-me-text {
+		/*border: 2px solid purple;*/
+		display: flex;
+		padding: 5px;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.projects-list {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.projects-list-item {
+		/*width: calc(50% - 20px);
+		margin: 10px;*/
+		width: 50%;
+	}
+
+	.projects-list li:nth-of-type(1) {
+	padding-top: 30px;
+	}
+
+	.alex-man img {
+
+		left: 1vw;
+	}
+
+	.hero p.supporting-text {
+	font-size: 30px;
+}
+
+
+
+
+
+}
+
+@media (min-width: 1200px) {
+	.inner-column {
+		width: min(85%, 1300px);
+		margin: auto;
+	}
+
+	.projects-list-item {
+		width: min(33.33%, 30%);
+		margin: 5px;
+		flex-grow: 1;
+		border: 2px solid black;
+
+	}
+
+	.hero p.supporting-text {
+	font-size: 35px;
+}
+
+
+}
 
 
 
