@@ -18,21 +18,20 @@
 	<body>
 		<nav>
 			<nav-bar>
-				<div class="inner-column">
-					<logo>
-						<a href="#">Alex Codes Stuff</a>
-					</logo>
-
-					<nav-links>
-						<ul>
-							<li><a href="#">About</a></li>
-							<li><a href="#blogs">My Writing</a></li>
-							<li><a href="#projects">Projects</a></li>
-							<li><a href="#contact">Contact</a></li>
-						</ul>
-					</nav-links>
-
-					<menu-wrap>
+				<picture class="alex-man">
+					<img src="images/alex-pow.svg" alt="">
+				</picture>
+				
+				<nav-links>
+					<ul>
+						<li><a href="#">About</a></li>
+						<li><a href="#blogs">My Writing</a></li>
+						<li><a href="#projects">Projects</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</nav-links>
+				
+				<menu-wrap>
 						<input type="checkbox" class="toggler" />
 						<div class="hamburger">
 							<div></div>
@@ -55,84 +54,63 @@
 							</div>
 						</menu>
 					</menu-wrap>
-				</div>
 			</nav-bar>
 		</nav>
 
 		<main>
 			<section class="hero hero-inner">
 				<div class="inner-column">
-					<h1 class="heading big-text">Hello, I'm Alex</h1>
+					<h1 class="header big-text">Hello, I'm&nbspAlex</h1>
 					<p class="supporting-text">
 						I create amazing experiences through design and development
 					</p>
-					<a href="#" class="btn">Find Out More</a>
+					<a href="#" class="btn supporting-text">Find Out More</a>
 				</div>
 			</section>
 		</main>
 
 		<section id="about-me" class="about-me">
-			<about-me-container>
+		
 				<div class="inner-column">
-					<picture>
-						<img
-							src="https://peprojects.dev/images/square.jpg"
-							alt="alex-picture"
-						/>
-					</picture>
-					<h2 class="header medium-text">About Me:</h2>
-					<h3 class="header smaller-text">
-						Web Designer and Developer based in Los Angeles, CA.
-					</h3>
-					<p class="supporting-text">
-						Using design thinking and goal driven development, I create and
-						build websites for small and large companies alike to generate
-						pleasant user experiences.
-					</p>
+					<about-me-container>
+						<picture>
+							<img
+								src="https://peprojects.dev/images/square.jpg"
+								alt="alex-picture"
+							/>
+						</picture>
+
+					<div class="about-me-text">
+						<h2 class="header medium-text">About Me:</h2>
+						<h3 class="header smaller-text">
+							Web Designer and Developer based in Los Angeles, CA.
+						</h3>
+						<p class="supporting-text">
+							Using design thinking and goal driven development, I create and
+							build websites for small and large companies alike to generate
+							pleasant user experiences.
+						</p>
+					</div>
+					</about-me-container>
 				</div>
-			</about-me-container>
+			
 		</section>
 
+<?php include('projects-grid.php')?>
 
-
-
-<section id="projects" class="projects">
-	<h2 class="header medium-text">Projects:</h2>
-
-	<?php include('projects.php');?>
-	  <div class='inner-column'>
-	  <ol class='projects-list'>
-	 
-		 <?php foreach($projectList as $project) { ?>
-
-		 	<?php
-		 	$name = $project["project"];
-		 	$image = $project["image"];
-		 	$link = $project["link"];
-		 	$tools = $project["tools"];
-		 	?>
-
-		 	<li class="projects-list-item">
-		 		<project-card>
-		 			<picture>
-		 				<img src="<?=$image?>" alt="">
-		 			</picture>
-
-		 			<div class="project-text">
-			 			<h3 class="smaller-text"><?=$name?></h3>
-			 			<p><?=$tools?></p>
-			 			<a href="<?=$link?>">View Project</a>
-			 		
-		 			</div>
-		 		</project-card>
-		 	</li>
-
-		  <?php } ?>
-
-	  </ol>   
-	  </div>
-	
+<section id="writing" class="blog">
+	<div class="inner-column">
+		<h3 class="header smaller-text">
+			I Also Write
+		</h3>
+		<p class="supporting-text">
+			I enjoy writing about my journey in the world of web design and development
+		</p>
+		<a href="https://alexvong.substack.com/" class="btn supporting-text">Read Them Here</a>
+	</div>
 </section>
+
+
 
 
 </body>
