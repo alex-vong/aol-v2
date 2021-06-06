@@ -29,14 +29,14 @@
  ];
 
   $paw = [
-   "project" => "Responsive Layout",
+   "project" => "Pawsitive Pets",
    "image" => "images/paw.png",
    "link" => "https://peprojects.dev/alpha-1/alexvong/pawsitive-pets/",
    "tools" => "HTML, CSS, PHP"
  ];
 
  $aol = [
-   "project" => "AOL (Alex On-Line)",
+   "project" => "Alex On-Line",
    "image" => "images/AOL.png",
    "link" => "file:///Users/alexvong/pe-websites/alex-on-line/index.html",
    "tools" => "HTML and CSS"
