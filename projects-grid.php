@@ -1,38 +1,37 @@
 <section id="projects" class="projects">
+	<h2 class="header medium-text">Projects:</h2>
 
-<?php include('projects.php');?>
+	<?php include('projects.php');?>
+	  <div class='inner-column'>
+	  <ol class='projects-list'>
+	 
+		 <?php foreach($projectList as $project) { ?>
 
+		 	<?php
+		 	$name = $project["project"];
+		 	$image = $project["image"];
+		 	$link = $project["link"];
+		 	$tools = $project["tools"];
+		 	?>
 
-  <div class='inner-column'>
-  <ol class='projects'>
+		 	<li class="projects-list-item">
+		 		<project-card>
+		 			<picture>
+		 				<img src="<?=$image?>" alt="">
+		 			</picture>
 
- 
- <?php foreach($projectList as $project) { ?>
+		 			<div class="project-text">
+			 			<h3 class="header smaller-text"><?=$name?></h3>
+			 			<p class="supporting-text"><?=$tools?></p>
+			 			<a href="<?=$link?>" class="supporting-text">View Project</a>
+			 		
+		 			</div>
+		 		</project-card>
+		 	</li>
 
- 	<?php
- 	$name = $project["project"];
- 	$image = $project["image"];
- 	$link = $project["link"];
- 	$tools = $project["tools"];
- 	?>
+		  <?php } ?>
 
- 	<li class="projects-list">
- 		<project-card>
- 			<picture>
- 				<img class="project-image" src="<?=$image?>" alt="">
- 			</picture>
- 			<h3><?=$name?></h3>
- 			<a href="<?=$link?>">View Projects</a>
- 			<p><?=$tools?></p>
- 		</project-card>
- 	</li>
-
-
-
-  <?php } ?>
-
-
-  </ol>   
-  </div>
+	  </ol>   
+	  </div>
 	
 </section>
