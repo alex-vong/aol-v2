@@ -1,5 +1,5 @@
 menu-wrap {
-	position: fixed;
+	position: absolute;
 	top: 0;
 	right: 0;
 	z-index: 1;
@@ -24,7 +24,7 @@ menu-wrap .toggler {
 
 menu-wrap .hamburger {
 	position: absolute;
-	top: 5px;
+	top: 10px;
 	right: 5px;
 	z-index: 1;
 	width: 60px;
@@ -100,7 +100,6 @@ menu-wrap .toggler:checked ~ menu > div > div {
 
 menu-wrap menu {
 	position: fixed;
-
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -109,11 +108,11 @@ menu-wrap menu {
 	overflow: hidden;
 	display: flex;
 	align-items: center;
-	justify-content: end;
+	justify-content: flex-end;
 }
 
 menu-wrap menu > div {
-	background: rgba(24, 39, 51, 0.95);
+	background: rgba(24, 39, 51, 1);
 	width: 60%;
 	height: 200vh;
 	display: flex;
@@ -132,15 +131,34 @@ menu-wrap menu > div > div {
 	transition: opacity 1s ease-in-out;
 }
 
-menu-wrap menu > div > div > ul > li {
+menu-wrap menu li {
 	list-style: none;
 	color: #fff;
 	font-size: 1.5rem;
 	padding: 1rem;
 }
 
-menu-wrap menu > div > div > ul > li > a {
+menu-wrap menu a {
 	color: inherit;
 	text-decoration: none;
 	transition: color 1s ease-in-out;
+	font-family: 'Ki Comic Bold';
+	font-size: 28px;
+}
+
+
+@media (min-width: 700px) {
+	menu-wrap menu > div {
+		width: 40%;
+	}
+
+	menu-wrap .hamburger {
+		right: 1vw;
+	}
+}
+
+@media (min-width: 1000px) {
+	menu-wrap menu > div {
+		width: 30%;
+	}
 }
