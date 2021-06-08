@@ -23,7 +23,7 @@
 		 			<div class="project-text">
 			 			<h3 class="header smaller-text"><?=$name?></h3>
 			 			<p class="supporting-text"><?=$tools?></p>
-			 			<a href="<?=$link?>" class="supporting-text">View Project</a>
+			 			<a href="<?=$link?>" class="btn supporting-text">View Project</a>
 			 		
 		 			</div>
 		 		</project-card>
