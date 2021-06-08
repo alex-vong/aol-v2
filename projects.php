@@ -24,7 +24,7 @@
   $biz = [
    "project" => "Business Card Website",
    "image" => "images/biz-card.png",
-   "link" => "https://peprojects.dev/alpha-1/biz-card-website/",
+   "link" => "https://peprojects.dev/alpha-1/alexvong/biz-card-website/",
    "tools" => "HTML, CSS, PHP"
  ];
 
@@ -38,7 +38,7 @@
  $aol = [
    "project" => "Alex On-Line",
    "image" => "images/AOL.png",
-   "link" => "file:///Users/alexvong/pe-websites/alex-on-line/index.html",
+   "link" => "https://peprojects.dev/alpha-1/alexvong/alex-on-line/",
    "tools" => "HTML and CSS"
  ];
 
