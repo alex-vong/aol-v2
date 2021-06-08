@@ -3,14 +3,6 @@
 @import 'menu.css';
 
 @font-face {
-	font-family: 'FabfeltScript';
-	font-style: normal;
-	font-weight: normal;
-	src: local('FabfeltScript Bold'),
-		url('../fab/FabfeltScript-Bold.woff') format('woff');
-}
-
-@font-face {
 	font-family: 'Avengeance';
 	font-style: normal;
 	font-weight: normal;
@@ -24,14 +16,12 @@
     src: local('Ki Comic'), url('../fonts/ki-comic/KICOMIC_.woff') format('woff');
 }
     
-
 @font-face {
-    font-family: 'Ki Comic Italic';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Ki Comic Italic'), url('../fonts/ki-comic/KICOI___.woff') format('woff');
- }
-    
+	font-family: 'Ki Comic Italic';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Ki Comic Italic'), url('../fonts/KICOI___.woff') format('woff');
+}  
 
 @font-face {
     font-family: 'Ki Comic Bold';
@@ -41,29 +31,26 @@
  }
     
 
-@font-face {
-    font-family: 'Ki Comic BoldItalic';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Ki Comic BoldItalic'), url('../fonts/ki-comic/KICOBI__.woff') format('woff');
- }
-
-
-
 :root {
 	--blue: #003554;
 	--green: #25a244;
 	--comicRed: #ed1d24;
 	--comicBlue: #00AEEF;
 	--comicGreen: limegreen;
+	--gray: #333;
 }
 
 body {
 	color: #fff;
 }
 
+/** {
+	scroll-behavior: smooth;
+}
+
+*/
 .header {
-font-family: 'Avengeance';
+	font-family: 'Avengeance';
 }
 
 .big-text {
@@ -75,34 +62,31 @@ font-family: 'Avengeance';
 }
 
 .medium-text {
-	font-size: 30px;
+	font-size: 40px;
 	padding-bottom: 30px;
 }
 
 .smaller-text {
-	font-size: 22px;
+	font-size: 30px;
 }
 
 .supporting-text {
 	font-size: 20px;
-	padding: 35px 0;
+	padding: 25px 0 35px 0;
 	line-height: 1.4;
 	font-family: 'Ki Comic Bold';
 
 }
 
-nav-links {
-	visibility: hidden;
-	display: none;
+a.btn:hover {
+	opacity: 0.8;
+	transform: scale(1.1);
+	border: 2px solid white;
 }
 
-/*nav-bar .inner-column {
-	background-color: transparent;
-}*/
 
 picture.alex-man {
 	display: inline-block;
-	/*padding: 10px;*/
 	background: transparent;
 	position: absolute;
 	z-index: 99;
@@ -112,37 +96,12 @@ picture.alex-man {
 	height: 80px;
 	width: auto;
 	position: absolute;
-	top: 5px;
+	top: 10px;
 	left: 10px;
 	border: none;
 
 }
-/*
-nav {
 
-	background-color: rgb(237,29,36);
-	height: 75px;
-	display: flex;
-	align-items: center;
-	position: sticky;
-	top: 0;
-	left: 0;
-	z-index: 999;
-}
-*/
-
-/*nav-bar {
-	display: none;
-
-	padding: 15px;
-}*/
-
-/*logo {
-	font-family: 'Ki Comic Bold';
-	font-size: 35px;
-	padding: 5px;
-	color: #fff;
-}*/
 
 /* Hero section */
 
@@ -199,10 +158,7 @@ main .btn, .blog .btn {
 }
 
 
-
-
 /*projects-grid*/
-
 
 .projects {
 	padding-top: 15px; 
@@ -212,9 +168,8 @@ main .btn, .blog .btn {
 
 .projects h2 {
 	padding: 30px 0 20px 0;
-	color: #333;
+	color: var(--gray);
 }
-
 
 
 project-card picture	{
@@ -228,7 +183,6 @@ picture img {
 	height: auto;
 	width: 100%;
 	border: 3px solid black;
-	
 }
 
 project-card picture img {
@@ -242,7 +196,6 @@ project-card picture img {
 }
 
 
-
 .projects h3, .projects a, .projects p {
 	padding: 10px;
 
@@ -251,7 +204,8 @@ project-card picture img {
 .projects-list-item a {
 	display: inline-block;
 	border: 2px solid black;
-	background-color: #333;
+	background-color: var(--gray);
+	margin-top: 10px;
 }
 
 .projects-list li:nth-of-type(1) {
@@ -264,7 +218,7 @@ project-card picture img {
 }
 
 .projects-list li:nth-of-type(3) {
-	background-color: #f8961e;
+	background-color: #ff6600;
 }
 
 .projects-list li:nth-of-type(4) {
@@ -276,7 +230,8 @@ project-card picture img {
 }
 
 .projects-list li:nth-of-type(6) {
-	background-color: #184e77;
+	background-color: #0050B5;
+	/*color: #000;*/
 }
 
 
@@ -284,17 +239,68 @@ project-card picture img {
 /*blog*/
 
 .blog {
-	padding: 30px 20px;
+	padding: 70px 20px;
 	background-color: #001d3d;
 	text-align: center;
 
 }
 
 
-.blog .btn {
-	margin-top: 0px;
+/*footer*/
+
+footer {
+	background-color: var(--gray);
+	padding:20px;
+	font-family: 'Ki Comic Italic';
+	font-size: 18px;
+
 }
 
+.footer .supporting-text {
+	padding-bottom: 5px;
+}
+
+.footer li {
+	list-style: none;
+	padding: 5px;
+}
+
+
+.footer {
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	align-content: center;
+
+}
+
+.footer-box {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	text-align: center;
+	padding: 10px;
+
+}
+
+.footer-box p.supporting-text {
+	border-bottom: 2px solid white;
+	padding: 10px;
+	margin-bottom: 15px;
+
+
+}
+
+.icons {
+	font-family: 'Avengeance';	
+}
+
+i {
+	font-size: 20px;
+	margin-right: 5px;
+}
 
 
 
@@ -303,10 +309,10 @@ project-card picture img {
 
 @media (min-width: 700px) {
 
-		.inner-column {
+	.inner-column {
 		width: min(95%, 1000px);
 		margin: auto;
-	
+
 	}
 
 	about-me-container {
@@ -340,7 +346,7 @@ project-card picture img {
 	}
 
 	.projects-list li:nth-of-type(1) {
-	padding-top: 30px;
+		padding-top: 30px;
 	}
 
 	.alex-man img {
@@ -349,16 +355,18 @@ project-card picture img {
 	}
 
 	.hero p.supporting-text {
-	font-size: 30px;
+		font-size: 30px;
+	}
+
+	.footer-box {
+		width: 25%;
+	}
+
 }
 
 
 
-
-
-}
-
-@media (min-width: 1200px) {
+@media (min-width: 1300px) {
 	.inner-column {
 		width: min(85%, 1300px);
 		margin: auto;
@@ -373,9 +381,8 @@ project-card picture img {
 	}
 
 	.hero p.supporting-text {
-	font-size: 35px;
-}
-
+		font-size: 35px;
+	}
 
 }
 
